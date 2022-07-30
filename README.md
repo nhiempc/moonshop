@@ -9,21 +9,6 @@ npm start
 http://localhost:5000/graphql
 # Querry in GraphQL example:
 - Get All products:
-query{
-  products{
-    /* return all fileds */
-    id
-    title
-    price
-    description
-    category
-    image
-    rating{
-      rate
-      count
-    }
-  }
-}
 ![Get all products](https://i.ibb.co/hW713cx/get-all-products.png)
 - Get product by ID:
 query{
@@ -41,6 +26,7 @@ query{
     }
   }
 }
+![Get product by id](https://i.ibb.co/xHncz7S/get-product-by-id.png)
 # Mutation in GraphQL example:
 - Add new product
 mutation {
