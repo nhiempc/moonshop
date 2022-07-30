@@ -16,12 +16,7 @@ http://localhost:5000/graphql
 - Add new product
 ![Add new product](https://i.ibb.co/YcD49XD/add-new-product.png)
 - Delete product by ID
-mutation {
-  deleteProduct(id: "62e4c8ebe05500d40399b5f8"){
-    /* return id and some fileds you want */
-    id
-  }
-}
+![Delete product by id](https://i.ibb.co/WHkjnTm/delete-product-by-id.png)
 - Update product by ID
 mutation {
   updateProduct(
