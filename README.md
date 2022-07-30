@@ -11,37 +11,10 @@ http://localhost:5000/graphql
 - Get All products:
 ![Get all products](https://i.ibb.co/hW713cx/get-all-products.png)
 - Get product by ID:
-query{
-  product(id: "62e287f411b3748127e42feb"){
-    /* return all fileds */
-    id
-    title
-    price
-    description
-    category
-    image
-    rating{
-      rate
-      count
-    }
-  }
-}
 ![Get product by id](https://i.ibb.co/xHncz7S/get-product-by-id.png)
 # Mutation in GraphQL example:
 - Add new product
-mutation {
-  addProduct(
-    title: "New Product", 
-    price: 25, 
-    description: "This is description", 
-    category: "Laptop gamming", 
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg", 
-    rating: {rate: 3.9, count: 120})
-  {
-    /* return title and some fileds you want */
-    id
-  }
-}
+![Add new product](https://i.ibb.co/YcD49XD/add-new-product.png)
 - Delete product by ID
 mutation {
   deleteProduct(id: "62e4c8ebe05500d40399b5f8"){
