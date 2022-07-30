@@ -1,11 +1,11 @@
-# moonshop
+# MoonShop
 Wellcome to MoonShop!
 # To run server: 
 npm run dev
-# To run client
+# To run client:
 cd client/moonshop
 npm start
-# Open GraphQL interface
+# Open GraphQL interface:
 http://localhost:5000/graphql
 # Querry in GraphQL example:
 - Get All products:
