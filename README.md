@@ -24,7 +24,7 @@ query{
     }
   }
 }
-![Get all products](https://prnt.sc/8joS_fYJyjaO)
+![Get all products](https://i.ibb.co/hW713cx/get-all-products.png)
 - Get product by ID:
 query{
   product(id: "62e287f411b3748127e42feb"){
