@@ -18,14 +18,4 @@ http://localhost:5000/graphql
 - Delete product by ID
 ![Delete product by id](https://i.ibb.co/WHkjnTm/delete-product-by-id.png)
 - Update product by ID
-mutation {
-  updateProduct(
-    id: "62e287f411b3748127e42feb"
-    /* new title and some fileds want to modifiy */
-    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops - Updated"
-  ){
-    /* return title and some fileds you want */
-    title
-  }
-}
-
+![Update product by id](https://i.ibb.co/hKnGQsJ/update-product-by-id.png)
