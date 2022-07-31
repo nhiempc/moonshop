@@ -10,16 +10,16 @@ const Pagination = () => {
                         <span aria-hidden="true">«</span>
                     </Link>
                 </li>
-                <li class="page-item active">
+                <li className="page-item active">
                     <Link to="/" className='page-link'>1</Link>
                 </li>
-                <li class="page-item null">
+                <li className="page-item null">
                     <Link to="/" className='page-link'>2</Link>
                 </li>
-                <li class="page-item null">
+                <li className="page-item null">
                     <Link to="/" className='page-link'>3</Link>
                 </li>
-                <li class="page-item">
+                <li className="page-item">
                     <Link to="/" className='page-link' aria-label='Next'>
                         <span aria-hidden="true">»</span>
                     </Link>
