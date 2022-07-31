@@ -10,23 +10,23 @@ const Footer = () => {
                         <Link to="/">
                             <img className='logo' src='https://i.ibb.co/F8fP09t/kisspng-logo-shopping-shopping-logo-design-5a6db653522347-4448754915171395393364.png' alt='logo'/>
                         </Link>
-                        <p><strong>MOONSHOP</strong> is an multi-vendor B2C fast e-commerce company. The company mainly focuses on men,women and children wear, but it also offers other apparel, clothes, accessories, shoes, bags and other fashion items.</p>
+                        <p><strong>MOONSHOP</strong> là một trang nhằm cung cấp các sản phẩm có chất lượng ra thị trường. Chúng tôi đang tập trung vào các sản phẩm công nghệ.</p>
                         <div className='connect-me'>
                             <ul>
                                 <li>
-                                    <Link to="/"><i class="fa fa-facebook-f"></i></Link>
+                                    <Link to="/"><i className="fa fa-facebook-f"></i></Link>
                                 </li>
                                 <li>
-                                    <Link to="/"><i class="fa fa-twitter"></i></Link>
+                                    <Link to="/"><i className="fa fa-twitter"></i></Link>
                                 </li>
                                 <li>
-                                    <Link to="/"><i class="fa fa-linkedin"></i></Link>
+                                    <Link to="/"><i className="fa fa-linkedin"></i></Link>
                                 </li>
                                 <li>
-                                    <Link to="/"><i class="fa fa-instagram"></i></Link>
+                                    <Link to="/"><i className="fa fa-instagram"></i></Link>
                                 </li>
                                 <li>
-                                    <Link to="/"><i class="fa fa-google"></i></Link>
+                                    <Link to="/"><i className="fa fa-google"></i></Link>
                                 </li>
                             </ul>
                         </div>
@@ -80,8 +80,8 @@ const Footer = () => {
                     <div className='news-to-mail col-lg-3 col-md-12 col-sm-12 col-12'>
                         <h3>Đăng ký nhận tin miễn phí</h3>
                         <form>
-                            <input class="form-control" type="email" placeholder="Mail của bạn" name="EMAIL" required="" value=""></input>
-                            <button class="btn" type="submit" name="subscribe"> Đăng ký</button>
+                            <input className="form-control" type="email" placeholder="Mail của bạn" name="EMAIL" required=""></input>
+                            <button className="btn" type="submit" name="subscribe"> Đăng ký</button>
                         </form>
                     </div>
                 </div>
