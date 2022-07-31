@@ -9,10 +9,10 @@ const Header = () => {
             <div className='row top_header'>
                 <ul className='right_list_fix'>
                     <li>
-                        <Link to="/login"><i class="fa fa-user"></i> Login</Link>
+                        <Link to="/login"><i className="fa fa-user"></i>Đăng nhập</Link>
                     </li>
                     <li>
-                        <Link to="/register"><i class="fa fa-lock"></i> Register</Link>
+                        <Link to="/register"><i className="fa fa-lock"></i>Đăng ký</Link>
                     </li>
                 </ul>
             </div>
@@ -45,14 +45,14 @@ const Header = () => {
                         <ul>
                             <li>
                                 <Link to="/wishlist">
-                                    <i class="fa fa-heart"></i>
-                                    <span class="item-count">4</span>
+                                    <i className="fa fa-heart"></i>
+                                    <span className="item-count">4</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/wishlist">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span class="item-count">3</span>
+                                <Link to="/cart">
+                                    <i className="fa fa-shopping-bag"></i>
+                                    <span className="item-count">3</span>
                                 </Link>
                             </li>
                         </ul>
