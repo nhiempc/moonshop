@@ -74,7 +74,7 @@ const HomePage = () => {
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-12'>
                                     <div className='product-wrapper'>
                                         <div className='thumb'>
-                                            <Link to="/">
+                                            <Link to="/detail">
                                                 <img src='https://andshop-react.netlify.app/static/media/product6.f19b14e6.png' alt='product'/>
                                             </Link>
                                             <div className='actions'>
@@ -86,7 +86,7 @@ const HomePage = () => {
                                         </div>
                                         <div className='content'>
                                             <h5 class="title">
-                                                <Link to="/">Laptop 1</Link>
+                                                <Link to="/detail">Laptop 1</Link>
                                             </h5>
                                             <span class="price">
                                                 <span class="new">$14.00</span>
@@ -97,7 +97,7 @@ const HomePage = () => {
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-12'>
                                     <div className='product-wrapper'>
                                         <div className='thumb'>
-                                            <Link to="/">
+                                            <Link to="/detail">
                                                 <img src='https://andshop-react.netlify.app/static/media/product6.f19b14e6.png' alt='product'/>
                                             </Link>
                                             <div className='actions'>
@@ -109,7 +109,7 @@ const HomePage = () => {
                                         </div>
                                         <div className='content'>
                                             <h5 class="title">
-                                                <Link to="/">Laptop 1</Link>
+                                                <Link to="/detail">Laptop 1</Link>
                                             </h5>
                                             <span class="price">
                                                 <span class="new">$14.00</span>
@@ -120,7 +120,7 @@ const HomePage = () => {
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-12'>
                                     <div className='product-wrapper'>
                                         <div className='thumb'>
-                                            <Link to="/">
+                                            <Link to="/detail">
                                                 <img src='https://andshop-react.netlify.app/static/media/product6.f19b14e6.png' alt='product'/>
                                             </Link>
                                             <div className='actions'>
@@ -132,7 +132,7 @@ const HomePage = () => {
                                         </div>
                                         <div className='content'>
                                             <h5 class="title">
-                                                <Link to="/">Laptop 1</Link>
+                                                <Link to="/detail">Laptop 1</Link>
                                             </h5>
                                             <span class="price">
                                                 <span class="new">$14.00</span>
@@ -143,7 +143,7 @@ const HomePage = () => {
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-12'>
                                     <div className='product-wrapper'>
                                         <div className='thumb'>
-                                            <Link to="/">
+                                            <Link to="/detail">
                                                 <img src='https://andshop-react.netlify.app/static/media/product6.f19b14e6.png' alt='product'/>
                                             </Link>
                                             <div className='actions'>
@@ -155,7 +155,7 @@ const HomePage = () => {
                                         </div>
                                         <div className='content'>
                                             <h5 class="title">
-                                                <Link to="/">Laptop 1</Link>
+                                                <Link to="/detail">Laptop 1</Link>
                                             </h5>
                                             <span class="price">
                                                 <span class="new">$14.00</span>
@@ -166,7 +166,7 @@ const HomePage = () => {
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-12'>
                                     <div className='product-wrapper'>
                                         <div className='thumb'>
-                                            <Link to="/">
+                                            <Link to="/detail">
                                                 <img src='https://andshop-react.netlify.app/static/media/product6.f19b14e6.png' alt='product'/>
                                             </Link>
                                             <div className='actions'>
@@ -178,7 +178,7 @@ const HomePage = () => {
                                         </div>
                                         <div className='content'>
                                             <h5 class="title">
-                                                <Link to="/">Laptop 1</Link>
+                                                <Link to="/detail">Laptop 1</Link>
                                             </h5>
                                             <span class="price">
                                                 <span class="new">$14.00</span>
@@ -189,7 +189,7 @@ const HomePage = () => {
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-12'>
                                     <div className='product-wrapper'>
                                         <div className='thumb'>
-                                            <Link to="/">
+                                            <Link to="/detail">
                                                 <img src='https://andshop-react.netlify.app/static/media/product6.f19b14e6.png' alt='product'/>
                                             </Link>
                                             <div className='actions'>
@@ -201,7 +201,7 @@ const HomePage = () => {
                                         </div>
                                         <div className='content'>
                                             <h5 class="title">
-                                                <Link to="/">Laptop 1</Link>
+                                                <Link to="/detail">Laptop 1</Link>
                                             </h5>
                                             <span class="price">
                                                 <span class="new">$14.00</span>
