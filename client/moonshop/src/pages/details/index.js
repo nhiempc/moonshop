@@ -20,7 +20,7 @@ const DetailPage = () => {
                         <div className='col-lg-8 col-md-8 col-sm-12'>
                             <div className='product-details'>
                                 <div className='product-name'>
-                                    <h3>Green Dress For Woman</h3>
+                                    <h3>Laptop Acer TravelMate B3 TMB311 31 C2HB N4020/4GB/128GB/Win11 (NX.VNFSV.006)</h3>
                                 </div>
                                 <div className='trademark'>
                                     <h5>Thương hiệu: ACER</h5>
@@ -35,11 +35,14 @@ const DetailPage = () => {
                                         <span className='count-rating'>(30 đánh giá)</span>
                                     </div>
                                 </div>
-                                <h4 className='product-single-one-price'>38.000.000 vnđ<del>40.000.000 vnđ</del></h4>
-                                <p className='product-single-one-description'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+                                <h4 className='product-single-one-price'>4.990.000₫<del>9.990.000₫ </del></h4>
+                                <div className='product-single-one-description'>
+                                    <p>Khuyến mãi trị giá 300.000₫.</p>
+                                    <p>Giá và khuyến mãi dự kiến áp dụng đến 23:00 31/08</p>
+                                </div>
                                 <div className='add-to-wishlist'>
                                     <Link to="/wishlist">
-                                        <i className="fa fa-heart"></i>Add To Wishlist
+                                        <i className="fa fa-heart"></i> Thêm vào yêu thích
                                     </Link>
                                 </div>
                                 <form>
