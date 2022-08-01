@@ -12,53 +12,57 @@ const SideBar = () => {
                 </form>
             </div>
             <div className='shop-sidebar-boxed'>
-                <h4>Dòng Laptop</h4>
+                <h4>Dòng máy tính</h4>
                 <form>
-                <label className="checkcontainer">One
+                <label className="checkcontainer">Laptop văn phòng
                     <input type="radio" name="radio"/>
                     <span className="radiobtn"></span>
                 </label>
-                <label className="checkcontainer">Two
+                <label className="checkcontainer">Laptop gaming
                     <input type="radio" name="radio"/>
                     <span className="radiobtn"></span>
                 </label>
-                <label className="checkcontainer">Three
+                <label className="checkcontainer">Máy tính bảng
                     <input type="radio" name="radio"/>
                     <span className="radiobtn"></span>
                 </label>
-                <label className="checkcontainer">Four
+                <label className="checkcontainer">Máy tính bàn
                     <input type="radio" name="radio"/>
                     <span className="radiobtn"></span>
                 </label>
-                <label className="checkcontainer">Five
+                <label className="checkcontainer">Laptop cao cấp
                     <input type="radio" name="radio"/>
                     <span className="radiobtn"></span>
                 </label>
                 </form>
             </div>
             <div className='shop-sidebar-boxed'>
-                <h4>Thương Hiệu</h4>
+                <h4>Thương hiệu</h4>
                 <form>
-                <label className="checkcontainer">One
-                    <input type="radio" name="radio"/>
-                    <span className="radiobtn"></span>
-                </label>
-                <label className="checkcontainer">Two
-                    <input type="radio" name="radio"/>
-                    <span className="radiobtn"></span>
-                </label>
-                <label className="checkcontainer">Three
-                    <input type="radio" name="radio"/>
-                    <span className="radiobtn"></span>
-                </label>
-                <label className="checkcontainer">Four
-                    <input type="radio" name="radio"/>
-                    <span className="radiobtn"></span>
-                </label>
-                <label className="checkcontainer">Five
-                    <input type="radio" name="radio"/>
-                    <span className="radiobtn"></span>
-                </label>
+                    <label className="checkcontainer">MacBook
+                        <input type="radio" name="radio"/>
+                        <span className="radiobtn"></span>
+                    </label>
+                    <label className="checkcontainer">ASUS
+                        <input type="radio" name="radio"/>
+                        <span className="radiobtn"></span>
+                    </label>
+                    <label className="checkcontainer">HP
+                        <input type="radio" name="radio"/>
+                        <span className="radiobtn"></span>
+                    </label>
+                    <label className="checkcontainer">Dell
+                        <input type="radio" name="radio"/>
+                        <span className="radiobtn"></span>
+                    </label>
+                    <label className="checkcontainer">MSI
+                        <input type="radio" name="radio"/>
+                        <span className="radiobtn"></span>
+                    </label>
+                    <label className="checkcontainer">Lenovo
+                        <input type="radio" name="radio"/>
+                        <span className="radiobtn"></span>
+                    </label>
                 </form>
             </div>
         </div>
