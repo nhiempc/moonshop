@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import loadable from '@loadable/component';
 
 const HomePage = loadable(() => import('../pages/home/index'));
-const DetailPage = loadable(() => import('../pages/detail/index'));
+const DetailPage = loadable(() => import('../pages/details/index'));
 const CartPage = loadable(() => import('../pages/cart/index'));
 const LoginPage = loadable(() => import('../pages/login/index'));
 const RegisterPage = loadable(() => import('../pages/register/index'));
