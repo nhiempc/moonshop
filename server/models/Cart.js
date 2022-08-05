@@ -9,11 +9,6 @@ const ProductInCartSchema = new mongoose.Schema({
 });
 
 const CartSchema = new mongoose.Schema({
-    userId: { 
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
-    description: String,
     status: {
         type: String,
         enum: ["0","1"]
