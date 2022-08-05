@@ -37,7 +37,7 @@ const WishListPage = () => {
                                             </td>
                                             <td className='product_total'>
                                                 <Link to="/cart">
-                                                    <button class="add-cart-btn">Thêm vào giỏ hàng</button>
+                                                    <button className="add-cart-btn">Thêm vào giỏ hàng</button>
                                                 </Link>
                                             </td>
                                             <td className='product_remove'><i className="fa fa-trash text-danger" style={{cursor: 'pointer'}}></i></td>
@@ -57,7 +57,7 @@ const WishListPage = () => {
                                             </td>
                                             <td className='product_total'>
                                                 <Link to="/cart">
-                                                    <button class="add-cart-btn">Thêm vào giỏ hàng</button>
+                                                    <button className="add-cart-btn">Thêm vào giỏ hàng</button>
                                                 </Link>
                                             </td>
                                             <td className='product_remove'><i className="fa fa-trash text-danger" style={{cursor: 'pointer'}}></i></td>
@@ -77,7 +77,7 @@ const WishListPage = () => {
                                             </td>
                                             <td className='product_total'>
                                                 <Link to="/cart">
-                                                    <button class="add-cart-btn">Thêm vào giỏ hàng</button>
+                                                    <button className="add-cart-btn">Thêm vào giỏ hàng</button>
                                                 </Link>
                                             </td>
                                             <td className='product_remove'><i className="fa fa-trash text-danger" style={{cursor: 'pointer'}}></i></td>
