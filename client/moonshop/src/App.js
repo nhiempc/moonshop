@@ -1,12 +1,17 @@
 import React from "react";
-// import { ReduxRouter } from '@lagunovsky/redux-react-router';
 import RouteApp from './routes/index';
-// import { browserHistory } from './redux/history';
-// import { Provider } from 'react-redux';
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: 'http://localhost:5000/graphql',
+  cache: new InMemoryCache()
+})
 
 const ShoppingApp = () => {
   return(
-    <RouteApp/>
+    <ApolloProvider client={client}>
+      <RouteApp/>
+    </ApolloProvider>
   )
 }
 
