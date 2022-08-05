@@ -2,6 +2,9 @@
 const Product = require('../models/Product');
 const Cart = require('../models/Cart');
 const User = require('../models/User');
+const Category = require('../models/Category');
+const Brand = require('../models/Brand');
+const mongoose = require('mongoose');
 
 const { 
     GraphQLObjectType, 
@@ -30,6 +33,32 @@ const RatingType = new GraphQLObjectType({
         count: { type: GraphQLInt }
     })
 });
+
+//Brand Type
+const BrandType = new GraphQLObjectType({
+    name: 'BrandType',
+    fields: () => ({
+        id: { type: GraphQLString },
+        title: { type: GraphQLString },
+        categoryIds: { type: GraphQLList(GraphQLString)}
+    })
+});
+// Brand Input
+// const BrandInput = new GraphQLInputObjectType({
+//     name: 'BrandInput',
+//     fields: () => ({
+
+//     })
+// })
+// Category Type
+const CategoryType = new GraphQLObjectType({
+    name: 'CategoryType',
+    fields: () => ({
+        id: { type: GraphQLString },
+        title: { type: GraphQLString },
+        brandIds: { type: GraphQLList(GraphQLString)}
+    })
+})
 // Product Type
 const ProductType = new GraphQLObjectType({
     name: 'ProductType',
@@ -38,8 +67,9 @@ const ProductType = new GraphQLObjectType({
         title: { type: GraphQLString },
         price: { type: GraphQLFloat },
         description: { type: GraphQLString },
-        category: { type: GraphQLString },
         image: { type: GraphQLString },
+        brandID: { type: GraphQLString},
+        categoryID: { type: GraphQLString },
         rating: { type: RatingType }
     })
 });
@@ -49,12 +79,12 @@ const ProductCartType = new GraphQLObjectType({
     fields: () => ({
         productId: { type: GraphQLString },
         quantity: { type: GraphQLInt },
-        product: {
-            type: ProductType,GraphQLString,
-            resolve(parent, args){
-                return Product.find(product => product.id == parent.productId)
-            }
-        }
+        // product: {
+        //     type: ProductType,
+        //     resolve(parent, args){
+        //         return Product.find(product => product.id == parent.productId)
+        //     }
+        // }
     })
 });
 // Product Cart Input
@@ -70,7 +100,6 @@ const CartType = new GraphQLObjectType({
     name: 'CartType',
     fields: () => ({
         id: { type: GraphQLString },
-        userId: { type: GraphQLString },
         status: { type: GraphQLString },
         products: { type: new GraphQLList(ProductCartType) }
     })
@@ -102,13 +131,14 @@ const UserType = new GraphQLObjectType({
         password: { type: GraphQLString },
         name: { type: NameType },
         phone: { type: GraphQLString },
-        carts: {
-            type: CartType,
-            args: { status: { type: GraphQLString }},
-            resolve(parent, args){
-                return Cart.find(cart => cart.userId == parent.id && cart.status == args.status);
-            }
-        }
+        cartId: { type: GraphQLString }
+        // carts: {
+        //     type: CartType,
+        //     args: { status: { type: GraphQLString }},
+        //     resolve(parent, args){
+        //         return Cart.find(cart => cart.userId == parent.id && cart.status == args.status);
+        //     }
+        // }
     })
 });
 const RootQuerry = new GraphQLObjectType({
@@ -152,6 +182,48 @@ const RootQuerry = new GraphQLObjectType({
             resolve(parent, args){
                 return User.find();
             }
+        },
+        categories: {
+            type: new GraphQLList(CategoryType),
+            resolve(parent, args){
+                return Category.find();
+            }
+        },
+        category: {
+            type: CategoryType,
+            args: { id: { type: GraphQLString }},
+            resolve(parent, args){
+                return Category.findById(args.id);
+            }
+        },
+        brands: {
+            type: new GraphQLList(BrandType),
+            resolve(parent, args){
+                return Brand.find();
+            }
+        },
+        brand: {
+            type: BrandType,
+            args: { id: { type: GraphQLString }},
+            resolve(parent, args){
+                return Brand.findById(args.id);
+            }
+        },
+        products_filter_home: {
+            type: new GraphQLList(ProductType),
+            args: {
+                brandID: { type : GraphQLString },
+                categoryID: { type: GraphQLString }
+            },
+            resolve(parent, args){
+                if(args.brandID === "" || args.brandID === null){
+                    return Product.find({ categoryID: args.categoryID });
+                }else if(args.categoryID === "" || args.categoryID === null){
+                    return Product.find({ brandID: args.brandID });
+                }else{
+                    return Product.find({ brandID: args.brandID,categoryID: args.categoryID });
+                }
+            }
         }
     }
 });
@@ -166,9 +238,9 @@ const mutation = new GraphQLObjectType({
                 title: { type: GraphQLNonNull(GraphQLString) },
                 price: { type: GraphQLNonNull(GraphQLFloat) },
                 description: { type: GraphQLNonNull(GraphQLString) },
-                category: { type: GraphQLNonNull(GraphQLString) },
-                image: { type: GraphQLNonNull(GraphQLString) },
-                rating: { type: GraphQLNonNull(RatingInput) }
+                categoryID: { type: GraphQLNonNull(GraphQLString) },
+                brandID: { type: GraphQLNonNull(GraphQLString) },
+                image: { type: GraphQLNonNull(GraphQLString) }
             },
             resolve(parent, args){
                 const product = new Product({
@@ -177,7 +249,10 @@ const mutation = new GraphQLObjectType({
                     description: args.description,
                     category: args.category,
                     image: args.image,
-                    rating: args.rating
+                    rating: {
+                        rate: 0,
+                        count: 0
+                    }
                 });
                 return product.save();
             }
@@ -238,7 +313,8 @@ const mutation = new GraphQLObjectType({
                     username: args.username,
                     password: args.password,
                     name: args.name,
-                    phone: args.phone
+                    phone: args.phone,
+                    cartId: null
                 });
                 return user.save();
             }
@@ -255,14 +331,11 @@ const mutation = new GraphQLObjectType({
         addCart: {
             type: CartType,
             args: {
-                userId: { type: GraphQLNonNull(GraphQLString) },
-                status: { type: GraphQLNonNull(GraphQLString) },
                 products: { type: GraphQLNonNull(GraphQLList(ProductCartInput))}
             },
             resolve(parent, args){
                 const cart = new Cart({
-                    userId: args.userId,
-                    status: args.status,
+                    status: "0",
                     products: args.products
                 });
                 return cart.save();
@@ -271,13 +344,40 @@ const mutation = new GraphQLObjectType({
         deleteCart: {
             type: CartType,
             args: { 
-                userId: { type: GraphQLNonNull(GraphQLString) }
+                id: { type: GraphQLNonNull(GraphQLString) }
             },
             resolve(parent, args){
                 return Cart.findOneAndRemove({
-                    userId: args.userId,
-                    status: "0"
+                    id: args.id
                 });
+            }
+        },
+        addCategory: {
+            type: CategoryType,
+            args: {
+                title: { type: GraphQLNonNull(GraphQLString) },
+                brandIds: { type: GraphQLList(GraphQLString) }
+            },
+            resolve(parent, args){
+                const category = new Category({
+                    title: args.title,
+                    brandIds: args.brandIds
+                });
+                return category.save();
+            }
+        },
+        addBrand: {
+            type: BrandType,
+            args: {
+                title: { type: GraphQLNonNull(GraphQLString) },
+                categoryIds: { type: GraphQLList(GraphQLString) }
+            },
+            resolve(parent, args){
+                const brand = new Brand({
+                    title: args.title,
+                    categoryIds: args.categoryIds
+                });
+                return brand.save();
             }
         }
     }
