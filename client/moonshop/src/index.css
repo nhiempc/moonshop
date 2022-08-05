@@ -192,7 +192,7 @@ code {
 .custom-boxed:last-child {
   margin-bottom: 0;
 }
-.checkcontainer {
+.checkcontainer, .checkcontainer.form-label {
   display: block;
     position: relative;
     padding-left: 30px;
@@ -239,6 +239,16 @@ code {
 img{
   width: 100%;
   display: block;
+}
+.all-products{
+  margin-top: -30px!important;
+}
+.shop-search{
+  margin-top: 30px;
+}
+.product-wrapper{
+  box-shadow: 0px 3px 15px 0px #0000000f;
+  margin-top: 30px;
 }
 .product-wrapper .content {
   position: relative;
@@ -330,7 +340,7 @@ img{
   width: 80%;
   height: 45px;
   line-height: 45px;
-  background-color: #fff;
+  background-color: #1d1d1d;
   text-align: center;
   border: 0;
   border-radius: 3px;
@@ -345,7 +355,7 @@ img{
   visibility: hidden;
   transition: all 0.3s ease 0s;
   transform: translateY(20px);
-  color: #3f3f3f;
+  color: white;
   opacity: 0;
   font-family: Raleway, sans-serif;
   padding: 0;
