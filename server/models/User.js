@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema({
         firstname: String,
         lastname: String
     },
+    cartId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cart'
+    },
     phone: String
 });
 
